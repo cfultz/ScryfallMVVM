@@ -3,15 +3,12 @@ package dev.fultz.scryfall.domain
 import android.os.Parcel
 import android.os.Parcelable
 
-
-
 data class Scryfall(
     val q: String? = null,
     val id: String? = null,
     val name: String? = null,
     val png: String? = null,
     val oracle_text: String? = null,
-    val legalities: ArrayList<String>? = null,
     val set_name: String? = null
     ) : Parcelable {
 
@@ -21,7 +18,6 @@ data class Scryfall(
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-        parcel.createStringArrayList(),
         parcel.readString()
     ) {
     }
@@ -32,7 +28,6 @@ data class Scryfall(
         parcel.writeString(name)
         parcel.writeString(png)
         parcel.writeString(oracle_text)
-        parcel.writeStringList(legalities)
         parcel.writeString(set_name)
     }
 

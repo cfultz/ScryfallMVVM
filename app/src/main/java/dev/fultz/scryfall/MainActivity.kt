@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             .create(ScryfallService::class.java)
 
         CoroutineScope(IO).launch {
-            val response = service.getCard(
+            val response = service.get(
                 id = "a36d3ea7-0f18-4865-b47b-755673db065e")
             Log.d("MainActivity", "Found Card: ${response.name}")
         }

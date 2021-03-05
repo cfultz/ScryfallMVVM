@@ -11,7 +11,6 @@ class ScryfallDtoMapper : DomainMapper<ScryfallDto, Scryfall> {
             name = model.name,
             png = model.png,
             oracle_text = model.oracle_text,
-            legalities = model.legalities as ArrayList<String>?,
             set_name = model.set_name
         )
     }
@@ -23,15 +22,14 @@ class ScryfallDtoMapper : DomainMapper<ScryfallDto, Scryfall> {
         name = domainModel.name,
         png = domainModel.png,
         oracle_text = domainModel.oracle_text,
-        legalities = domainModel.legalities as ArrayList<String>?,
         set_name = domainModel.set_name
         )
     }
 
-    fun toEntityList(initial: List<ScryfallDto>): List<Scryfall>{
+    fun ToDomainList(initial: List<ScryfallDto>): List<Scryfall>{
         return initial.map {mapToDomainModel(it)}
     }
-    fun fromEntityList(initial: List<Scryfall>): List<ScryfallDto>{
+    fun fromDomainList(initial: List<Scryfall>): List<ScryfallDto>{
         return initial.map {mapFromDomainModel(it)}
     }
 

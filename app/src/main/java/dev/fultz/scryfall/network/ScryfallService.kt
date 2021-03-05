@@ -7,12 +7,12 @@ import retrofit2.http.Query
 
 interface ScryfallService {
     @GET(value = "cards/search")
-    suspend fun searchCards(
+    suspend fun search(
         @Query(value = "q") q: String,
     ): ScryfallSearchResponse
 
     @GET("cards/{id}")
-    suspend fun getCard(
+    suspend fun get(
         @Path(value = "id") id: String,
     ): ScryfallSearchResponse
 
