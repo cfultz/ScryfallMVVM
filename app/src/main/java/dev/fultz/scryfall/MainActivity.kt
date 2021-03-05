@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.google.gson.GsonBuilder
-import dev.fultz.scryfall.fragments.ScryfallListFragment
+import dev.fultz.scryfall.network.ScryfallService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-/*
         val service = Retrofit.Builder()
             .baseUrl("https://api.scryfall.com/")
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
@@ -28,11 +27,11 @@ class MainActivity : AppCompatActivity() {
             .create(ScryfallService::class.java)
 
         CoroutineScope(IO).launch {
-            val response = service.getCardId(
-                id = "7f4840f1-3db3-4ba6-b75b-bbd87251a3af")
+            val response = service.getCard(
+                id = "a36d3ea7-0f18-4865-b47b-755673db065e")
             Log.d("MainActivity", "Found Card: ${response.name}")
         }
-*/
+
 
     }
 
