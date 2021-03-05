@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/scryfallListFragment">
+
+    <fragment
+        android:id="@+id/scryfallListFragment"
+        android:name="dev.fultz.scryfall.fragments.ScryfallListFragment"
+        android:label="ScryfallListFragment" >
+        <action
+            android:id="@+id/viewCard"
+            app:destination="@id/scryfallFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scryfallFragment"
+        android:name="dev.fultz.scryfall.fragments.ScryfallFragment"
+        android:label="ScryfallFragment" />
+</navigation>
