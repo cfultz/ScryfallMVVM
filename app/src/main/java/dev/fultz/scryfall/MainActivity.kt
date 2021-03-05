@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.google.gson.GsonBuilder
+import dev.fultz.scryfall.fragments.ScryfallListFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
@@ -18,6 +19,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.main_container,
+                ScryfallListFragment())
+            .commit()
+
+/*
         val service = Retrofit.Builder()
             .baseUrl("https://api.scryfall.com/")
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
@@ -29,6 +37,7 @@ class MainActivity : AppCompatActivity() {
                 id = "7f4840f1-3db3-4ba6-b75b-bbd87251a3af")
             Log.d("MainActivity", "Found Card: ${response.name}")
         }
+*/
 
     }
 
