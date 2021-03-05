@@ -2,7 +2,7 @@ package dev.fultz.scryfall.network.model
 
 import com.google.gson.annotations.SerializedName
 
-class ScryfallNetworkEntity (
+data class ScryfallDto (
         @SerializedName("q")
         var q: String? = null,
         @SerializedName("id")
